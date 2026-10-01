@@ -1,6 +1,8 @@
 import { cormorant, inter } from "@/ui/fonts/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
+import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 
 export const metadata: Metadata = {
@@ -46,7 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cormorant.variable}  h-full antialiased border-border outline-ring/50`}
+      className={cn("h-full", "antialiased", "border-border", "outline-ring/50", cormorant.variable, "font-sans", inter.variable)}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-body">
         {children}</body>

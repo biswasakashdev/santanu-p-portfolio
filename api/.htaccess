@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# /api/login -> login.php
+RewriteRule ^login$ login.php [L,QSA]
+
+RewriteRule ^logout$ logout.php [L,QSA]
+
+# /api/proposals -> proposals.php
+RewriteRule ^proposals$ proposals.php [L,QSA]
+
+# /api/proposals/<uuid> -> proposals.php
+RewriteRule ^proposals/([0-9a-fA-F-]{36})$ proposals.php [L,QSA]
+
+# /api/proposal/<uuid> -> proposals.php
+RewriteRule ^proposal/([0-9a-fA-F-]{36})$ proposals.php [L,QSA]
+
+# /api/proposal -> proposals.php
+RewriteRule ^proposal$ proposals.php [L,QSA]

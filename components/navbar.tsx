@@ -39,7 +39,7 @@ export default function Navbar() {
                             href={l.href}
                             className="group relative font-body text-[10px] uppercase tracking-[0.4em] text-white/70 transition-colors duration-300 hover:text-white"
                         >
-                            <span className="absolute -top-3 left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                            <span className="absolute -top-3 left-1/2 h-0.75 w-0.75 -translate-x-1/2 rounded-full bg-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                             {l.label}
                         </a>
                     ))}

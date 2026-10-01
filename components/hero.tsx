@@ -26,14 +26,14 @@ export default function Hero() {
             className="relative flex min-h-screen items-center overflow-hidden bg-obsidian">
 
             <div className="absolute inset-0">
-                <div className="absolute right-0 top-0 h-full w-full md:w-[58%]">
+                <div className="absolute right-0 top-0 h-full w-full md:w-[60%]">
                     <Image
                         width={800}
                         height={800}
                         loading='eager'
                         src="/profile.png"
-                        alt="Alexander Sterling"
-                        className="h-full w-full object-cover object-[75%_center]" />
+                        alt="Santanu Pain"
+                        className="h-full w-full object-cover object-[75%_center] md:mr-10" />
 
                     <div className="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/75 to-transparent" />
 

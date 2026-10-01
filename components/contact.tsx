@@ -7,13 +7,39 @@ import { Reveal } from './reveal';
 export default function Contact() {
     const [submitted, setSubmitted] = useState(false)
 
+
+
     const [state, formAction, loading] = useActionState<ContactForm, FormData>(async (prevState: ContactForm, formData: FormData) => {
-        setTimeout(() => { }, 1000)
+
+        console.log(formData.get("name"), Array.from(formData.values()))
+        const res = await fetch('/api/proposals.php', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: formData.get('name'),
+                organisation: formData.get('organization'),
+                email: formData.get('email'),
+                purpose: formData.get('purpose'),
+            })
+        })
+
+        const data = await res.json()
+
+        if (!res.ok) {
+            console.log(data)
+            return {
+                name: formData.get('name') as string,
+                organization: formData.get('organization') as string,
+                email: formData.get('email') as string,
+                purpose: formData.get('purpose') as string,
+            }
+        }
+
+        setSubmitted(true)
 
         return {} as ContactForm
     }, {
-        fullName: '',
-        organisation: '',
+        name: '',
+        organization: '',
         email: '',
         purpose: '',
     })
@@ -60,8 +86,9 @@ export default function Contact() {
                                         Full Name
                                     </label>
                                     <input
+                                        name='name'
                                         required
-                                        defaultValue={state.fullName}
+                                        defaultValue={state.name}
                                         placeholder="Your name"
                                         className={fieldClass}
                                     />
@@ -71,7 +98,8 @@ export default function Contact() {
                                         Organization
                                     </label>
                                     <input
-                                        defaultValue={state.organisation}
+                                        name='organization'
+                                        defaultValue={state.organization}
                                         placeholder="Your institution"
                                         className={fieldClass}
                                     />
@@ -83,6 +111,7 @@ export default function Contact() {
                                     Email
                                 </label>
                                 <input
+                                    name='email'
                                     required
                                     type="email"
                                     defaultValue={state.email}
@@ -96,6 +125,7 @@ export default function Contact() {
                                     Purpose of Meeting
                                 </label>
                                 <textarea
+                                    name='purpose'
                                     required
                                     defaultValue={state.purpose}
                                     placeholder="State the matter and the horizon."
@@ -148,8 +178,8 @@ export default function Contact() {
 
 
 export interface ContactForm {
-    fullName?: string,
-    organisation?: string,
+    name?: string,
+    organization?: string,
     email?: string,
     purpose?: string
 }

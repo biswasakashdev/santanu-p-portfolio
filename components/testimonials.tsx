@@ -1,22 +1,21 @@
-import React from 'react';
 import { GoldDivider } from './gold-driver';
 import { Reveal } from './reveal';
 
 const quotes = [
     {
-        text: 'Alexander does not follow markets. He precedes them.',
-        author: 'Chair',
-        org: 'Global Sovereign Council',
+        text: 'Santanu does not follow markets. He precedes them.',
+        author: 'Chairman',
+        org: 'The Sovereign Capital Management Group',
     },
     {
         text: 'The rarest mind in modern capital — and the most patient.',
-        author: 'Editor-in-Chief',
-        org: 'The Financial Times',
+        author: 'Chairman',
+        org: 'The Sovereign Capital Management Group',
     },
     {
         text: 'He builds what outlasts the century. The rest is noise.',
-        author: 'Secretary-General',
-        org: 'United Trade Assembly',
+        author: 'Chairman',
+        org: 'The Sovereign Capital Management Group',
     },
 ];
 
