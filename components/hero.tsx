@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { cormorant } from '@/ui/fonts/fonts';
 
 const manifesto =
     'Capital is patient. Vision is rare. I build for the century, not the quarter.';
@@ -29,6 +30,7 @@ export default function Hero() {
                     <Image
                         width={800}
                         height={800}
+                        loading='eager'
                         src="/profile.png"
                         alt="Alexander Sterling"
                         className="h-full w-full object-cover object-[75%_center]" />
@@ -53,7 +55,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.4, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="font-display font-light leading-[0.85] text-gold"
+                        className={`${cormorant.className} font-light leading-[0.85] text-gold`}
                         style={{
                             fontSize: 'clamp(3.5rem, 12vw, 11rem)',
                             letterSpacing: '-0.02em'
@@ -72,7 +74,7 @@ export default function Hero() {
 
 
                     <p
-                        className="mt-8 min-h-[3.5rem] max-w-xl font-display italic text-white/90 text-xs md:text-xs"
+                        className={`mt-8 min-h-[3.5rem] max-w-xl  text-white/90 text-xs md:text-2xl italic font-display`}
                         style={{ letterSpacing: '0.01em' }}>
 
                         {text}
