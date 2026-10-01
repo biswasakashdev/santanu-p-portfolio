@@ -95,7 +95,7 @@ function getDatabase(): PDO
 
     try {
         return new PDO(
-            "mysql:host={$host};port={$port};dbname={$name};charset=utf8mb4",
+            "mysql:unix_socket=/run/mysqld/mysqld.sock;dbname={$name};charset=utf8mb4",
             $user,
             $password,
             [

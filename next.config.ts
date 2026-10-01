@@ -4,14 +4,14 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
+  trailingSlash: true,
   async rewrites() {
     return [
       {
         source: "/api/:path*",
         destination: "http://localhost:8801/api/:path*",
-
       },
     ];
   },
