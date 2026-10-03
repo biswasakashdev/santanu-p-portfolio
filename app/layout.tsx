@@ -4,12 +4,12 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-
 export const metadata: Metadata = {
-  title: "Santanu Paine",
-  description: "Capital is patient. Vision is rare. I build for the century, not the quarter.",
+  title: "Santanu Pain",
+  description:
+    "Capital is patient. Vision is rare. I build for the century, not the quarter.",
   keywords: [
-    "Santanu Paine",
+    "Santanu Pain",
     "Sovereign Capital Management Group",
     "Investment Banking",
     "Global Finance",
@@ -48,10 +48,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", "border-border", "outline-ring/50", cormorant.variable, "font-sans", inter.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        "border-border",
+        "outline-ring/50",
+        cormorant.variable,
+        "font-sans",
+        inter.variable,
+      )}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-body">
-        {children}</body>
+        {children}
+      </body>
     </html>
   );
 }
