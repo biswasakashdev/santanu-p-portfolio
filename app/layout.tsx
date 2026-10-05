@@ -49,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={cn(
+        "data-scroll-smooth",
         "h-full",
         "antialiased",
         "border-border",
