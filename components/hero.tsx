@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cormorant } from "@/ui/fonts/fonts";
@@ -9,13 +9,19 @@ const manifesto =
 
 export default function Hero() {
   const [text, setText] = useState("");
+  const cursorRef = useRef<null | HTMLSpanElement>(null);
 
   useEffect(() => {
     let i = 0;
     const id = setInterval(() => {
       i += 1;
       setText(manifesto.slice(0, i));
-      if (i >= manifesto.length) clearInterval(id);
+      if (i >= manifesto.length) {
+        clearInterval(id);
+        if (cursorRef.current) {
+          cursorRef.current.style.display = "none";
+        }
+      }
     }, 34);
     return () => clearInterval(id);
   }, []);
@@ -81,6 +87,7 @@ export default function Hero() {
             <span
               className="ml-0.5 inline-block w-[2px] animate-pulse bg-gold align-middle"
               style={{ height: "0.9em" }}
+              ref={cursorRef}
             />
           </p>
 
