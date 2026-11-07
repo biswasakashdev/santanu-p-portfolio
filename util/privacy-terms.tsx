@@ -10,7 +10,7 @@ export const privacyTermsSections: {
     heading: "Privacy Policy & Terms of Use",
     description: (
       <>
-        <p>Effective Date: October 5, 2026</p>
+        <p>Effective Date: February 14, 2021</p>
         <p>Last Updated: October 5, 2026</p>
         <p>
           Welcome to <span className="font-bold">santanupain.com </span>(the

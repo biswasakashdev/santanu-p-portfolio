@@ -32,7 +32,7 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-obsidian"
     >
       <div className="absolute inset-0">
-        <div className="absolute md:right-4 right-0 top-0 h-full w-full md:w-[60%]">
+        <div className="absolute right-0 top-0 h-full w-full md:w-[40%] lg:w-[60%]">
           <Image
             width={1200}
             height={1200}

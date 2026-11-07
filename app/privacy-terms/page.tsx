@@ -1,9 +1,11 @@
 "use client";
 
-import { ShieldCheck, FileText, ArrowLeft, Mail } from "lucide-react";
 import { privacyTermsSections } from "@/util/privacy-terms";
+import { ArrowLeft, Mail } from "lucide-react";
 
-/** 
+import Link from "next/link";
+
+/**
   <ul className="list-disc list-inside space-y-1 text-zinc-400 pl-1">
                   <li>
                     Respond to business inquiries and provide consultation
@@ -17,9 +19,9 @@ import { privacyTermsSections } from "@/util/privacy-terms";
                     site.
                   </li>
                 </ul>
- 
- 
- * 
+
+
+ *
  */
 
 export default function LegalPage() {
@@ -28,13 +30,13 @@ export default function LegalPage() {
       {/* Top Header */}
       <header className="border-b border-[#C9A84C]/20 bg-[#0A0A0A]/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a
+          <Link
             href="/"
             className="flex items-center gap-2 text-sm text-zinc-400 hover:text-[#C9A84C] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Home</span>
-          </a>
+          </Link>
           <span className="text-xs uppercase tracking-wider text-zinc-500 font-medium">
             Legal & Compliance
           </span>
@@ -70,10 +72,31 @@ export default function LegalPage() {
                 </section>
               )}
             </section>
+
+
           ))}
+
+          {/* Contact Footer Box */}
+                 <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                   <div>
+                     <h3 className="text-sm font-semibold text-white">
+                       Have questions?
+                     </h3>
+                     <p className="text-xs text-zinc-400">
+                       Get in touch directly regarding legal inquiries or policies.
+                     </p>
+                   </div>
+                   <a
+                     href="mailto:info@santanupain.com"
+                     className="inline-flex items-center gap-2 text-xs font-medium text-[#C9A84C] hover:underline"
+                   >
+                     <Mail className="w-4 h-4" />
+                     info@santanupain.com
+                   </a>
+                 </div>
         </article>
         <p className="text-center text-xs text-zinc-600 mt-8">
-          &copy; {new Date().getFullYear()} All rights reserved.
+          &copy; 2026 All Rights Reserved
         </p>
       </main>
     </div>

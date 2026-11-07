@@ -8,7 +8,6 @@ import Navbar from "@/components/navbar";
 import Story from "@/components/story";
 import Testimonials from "@/components/testimonials";
 import Vision from "@/components/vision";
-import Image from "next/image";
 
 export default function Home() {
   return (
